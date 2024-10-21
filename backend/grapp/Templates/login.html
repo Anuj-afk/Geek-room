@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login with Google</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #f0f0f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .login-btn {
+            background-color: #4285f4;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .login-btn:hover {
+            background-color: #357ae8;
+        }
+
+        .google-logo {
+            height: 24px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .logout-btn {
+            background-color: #db4437;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .logout-btn:hover {
+            background-color: #c13728;
+        }
+
+        .user-info {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        .message {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sign in with Google</h2>
+
+        <p class="message">Click the button below to sign in using your Google account.</p>
+
+        <!-- This is where the Google login button would go -->
+        <a class="login-btn" href="{% provider_login_url 'google' %}?next=/">
+            <img class="google-logo" src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png" alt="Google Logo" />
+            Login with Google
+        </a>
+    </div>
+</body>
+</html>
+{% endblock %}
